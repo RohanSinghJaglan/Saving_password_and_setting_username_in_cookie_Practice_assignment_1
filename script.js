@@ -19,5 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // 3. If the cookie does not exist, create it and set the value to 1
   // 4. Display the count on the webpage
 
-  // your code here
+
+  let count = getCookie('count');
+  
+  if (count) {
+    count = parseInt(count) + 1;
+  } else {
+   
+    count = 1;
+  }
+  setCookie('count', count, 7); 
+  document.body.innerHTML = `<h1>Page Views: ${count}</h1>`;
 });
